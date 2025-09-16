@@ -42,4 +42,12 @@ public class Pet {
     public void setAge(int age) {
         this.age = age;
     }
+
+    //class methods
+
+    @Override
+    public String toString(){
+        return name + " (" + breed + "): " + age;
+    }
+
 }
