@@ -1,2 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string-array name="breeds">
+        <item>Labrador</item>
+        <item>Java</item>
+        <item>Labradoodle</item>
+        <item>Siberian Husky</item>
+        <item>Golden Retriever</item>
+        <item>Alaskan Malumute</item>
+        <item>Yorkie</item>
+        <item>Bullgod</item>
+        <item>Checkoslovaugian Wold Dog</item>
+
+    </string-array>
+
+</resources>
