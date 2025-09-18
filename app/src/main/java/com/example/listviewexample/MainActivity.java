@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Random;
 
 import model.Pet;
@@ -33,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         petListWidget = findViewById(R.id.petListWidget);
 
-        int selection = 2;
+        int selection = 3;
         populateListView(selection);
     }
 
@@ -45,8 +48,35 @@ public class MainActivity extends AppCompatActivity {
             case 2:
                 usingDataArray();
                 break;
+            case 3:
+                System.out.println("Using 2 lines start");
+                usingTwoLines();
+                System.out.println("Using 2 lines done");
+                break;
 
         }
+    }
+
+    private void usingTwoLines(){
+
+        List<HashMap<String, String>> data = new ArrayList<>();
+
+        for (Pet p: pets) {
+            HashMap<String, String> current = new HashMap<>();
+            current.put("name", p.getName());
+            current.put("breed", p.getBreed());
+            data.add(current);
+        }
+
+        SimpleAdapter adapter = new SimpleAdapter(
+                this,
+                data,
+                android.R.layout.simple_list_item_2,
+                new String[]{"name", "breed"},
+                new int[]{android.R.id.text1,
+                        android.R.id.text2});
+
+        petListWidget.setAdapter(adapter);
     }
 
     /**
